@@ -29,7 +29,7 @@
           zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
-		var locations = [[]];
+		
 		loc34 = [40.758512, -73.985066];
 		loc35 = [40.759202, -73.984616];
 		loc36 = [40.759833, -73.984171];
@@ -62,6 +62,13 @@
 		loc_15 = [40.763968, -73.995994];
 		loc64 = [40.755345, -73.997411];
 		loc65 = [40.755995, -73.976950];
+		//PAT
+		pat00 = [40.755989, -73.986944];
+		pat30 = [40.759613, -73.995506];
+		pat39 = [40.765269, -73.991300];
+		pat_29 = [40.759142, -73.976773];
+		pat_20 = [40.753437, -73.980871];
+
 		
 		
         // Define the symbol, using one of the predefined paths ('CIRCLE')
@@ -164,6 +171,23 @@
           map: map
         });
 		animateCircle(line6);
+		
+		var patSymbol1 = {
+          path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+          scale: 5,
+          strokeColor: '#000000'
+        };
+		var pat1 = new google.maps.Polyline({
+          path: [{lat: pat00[0], lng: pat00[1]}, {lat: pat30[0], lng: pat30[1]}, {lat: pat39[0], lng: pat39[1]},{lat: pat_29[0], lng: pat_29[1]},{lat: pat_20[0], lng: pat_20[1]},{lat: pat00[0], lng: pat00[1]},{lat: loc39[0], lng: loc39[1]}],
+          icons: [{
+            icon: patSymbol1,
+            offset: '100%'	
+          }],
+		  strokeColor: "#03810B",
+		  geodesic: true,
+          map: map
+        });
+		animateCircle(pat1);
       }
 	  
 	  
